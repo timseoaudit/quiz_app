@@ -24,7 +24,6 @@ class ResultsScreen extends StatelessWidget {
 
   @override
   Widget build(context) {
-
     final summaryData = getSummaryData();
     final numTotalQuestions = questions.length;
     final numCorrectAnswers = summaryData.where((data) {
@@ -38,13 +37,24 @@ class ResultsScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-             Text("You answered $numCorrectAnswers out of $numTotalQuestions questions correctly!"),
+            Text(
+              "You answered $numCorrectAnswers out of $numTotalQuestions questions correctly!",
+              style: const TextStyle(
+                  color: Color.fromARGB(255, 211, 189, 241), fontSize: 18),
+              textAlign: TextAlign.center,
+            ),
             const SizedBox(height: 30),
             QuestionsSummary(summaryData),
             const SizedBox(height: 30),
-            TextButton(
+            TextButton.icon(
+              style: ButtonStyle(
+                  foregroundColor:
+                      MaterialStateProperty.all<Color>(Colors.white)),
               onPressed: () {},
-              child: const Text("Restart Quiz"),
+              icon: const Icon(
+                Icons.refresh,
+              ),
+              label: const Text("Restart Quiz"),
             ),
           ],
         ),
