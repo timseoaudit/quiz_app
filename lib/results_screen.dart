@@ -16,6 +16,7 @@ class ResultsScreen extends StatelessWidget {
         'question': questions[i].text,
         'correct_answer': questions[i].answers[0],
         'user_answer': chosenAnswers[i],
+        'is_correct': questions[i].answers[0] == chosenAnswers[i],
       });
     }
 

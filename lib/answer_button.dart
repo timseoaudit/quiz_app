@@ -6,7 +6,6 @@ class AnswerButton extends StatelessWidget {
   final String answerText;
   final void Function() onTab;
 
-
   @override
   Widget build(context) {
     return Container(
@@ -14,13 +13,13 @@ class AnswerButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onTab,
         style: ElevatedButton.styleFrom(
-          backgroundColor: const Color.fromARGB(255, 96, 6, 109), 
+          backgroundColor: const Color.fromARGB(255, 96, 6, 109),
           foregroundColor: Colors.white,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
           padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 40),
         ),
-        child: Text(answerText,
-        textAlign: TextAlign.center),
+        child: Text(answerText, textAlign: TextAlign.center),
       ),
     );
   }
