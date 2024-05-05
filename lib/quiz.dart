@@ -34,11 +34,17 @@ class _QuizState extends State<Quiz> {
 
     if (selectedAnswers.length == questions.length) {
       setState(() {
-        activeScreen = ResultsScreen(
-          chosenAnswers: selectedAnswers,
-        );
+        activeScreen =
+            ResultsScreen(chosenAnswers: selectedAnswers, restartQuiz);
       });
     }
+  }
+
+  void restartQuiz() {
+    setState(() {
+      activeScreen = QuestionsScreen(onSelectAnswer: chooseAnswer);
+      selectedAnswers = [];
+    });
   }
 
   @override
